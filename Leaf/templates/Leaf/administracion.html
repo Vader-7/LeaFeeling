@@ -1,0 +1,78 @@
+{% extends 'Leaf/base.html'%}
+{% load static %}
+{% block content %}
+{% load humanize %}
+<title>LEAFEELING</title>
+<div class="container" id="descrip">
+    <h3 style="text-align: left;" id="Title"><img class="inline-imgx" src="{% static 'Leaf/img/box-open-solid.svg'%}" alt=""><a href="/addproducto">AGREGAR PRODUCTO</a></h3>
+    <label for="crear" class="label"><img class="inline-img" src="{% static 'Leaf/img/angle-left-solid.svg'%}" alt=""><a class="VOLVER" href="/">VOLVER</a></label>
+    <h1 style="text-align: center;" id="Title">PRODUCTOS</h1>
+    {% for p in entity %}
+        {% if p.categoria_id == 1 %}    
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="/modificar/{{p.id}}"><img class="d-block w-100 img-fluid" src="{{p.imagen.url}}" alt="..."/></a>
+                </div>
+                <div class="col-md-6">
+                    <h1>{{p.nombre | title}}</h1>
+                    <p>{{p.descripcion}}</p>
+                    <p>El producto tiene un valor: ${{p.precio | intcomma}}</p>
+                    <label type class="label"><img class="inline-img" src="{% static 'Leaf/img/boxes-stacked-solid.svg'%}" alt="">STOCK: {{p.stock}}</label>
+                    {% if perms.Leaf.change_producto%}
+                        <label type class="label"><img class="inline-img" src="{% static 'Leaf/img/pen-to-square-solid.svg'%}" alt=""><a class="VOLVER" href="/modificar/{{p.id}}">EDITAR</a></label>
+                    {% endif %}
+                    {% if perms.Leaf.delete_producto%}
+                        <label type class="label"><img class="inline-img" src="{% static 'Leaf/img/square-minus-solid.svg'%}" alt=""><a class="VOLVER" onclick="delProducto({{p.id}})" href="#">ELIMINAR</a></label>
+                    {% endif %}
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+    {% for p in entity %}
+        {% if p.categoria_id == 2 %}
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="/modificar/{{p.id}}"><img src="{{p.imagen.url}}" class="d-block w-100 img-fluid" alt="..."/></a>
+                </div>
+                <div class="col-md-6">
+                    <h1>{{p.nombre | title}}</h1>
+                    <p>{{p.descripcion}}</p>
+                    <p>El producto tiene un valor: ${{p.precio | intcomma}}</p>
+                    <label type class="label"><img class="inline-img" src="{% static 'Leaf/img/boxes-stacked-solid.svg'%}" alt="">STOCK: {{p.stock}}</label>
+                    {% if perms.Leaf.change_producto%}
+                        <label type class="label"><img class="inline-img" src="{% static 'Leaf/img/pen-to-square-solid.svg'%}" alt=""><a class="VOLVER" href="/modificar/{{p.id}}">EDITAR</a></label>
+                    {% endif %}
+                    {% if perms.Leaf.delete_producto%}
+                        <label type class="label"><img class="inline-img" src="{% static 'Leaf/img/square-minus-solid.svg'%}" alt=""><a class="VOLVER" onclick="delProducto({{p.id}})" href="#">ELIMINAR</a></label>
+                    {% endif %}
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+    {% for p in entity %}
+        {% if p.categoria_id == 3 %}
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="/modificar/{{p.id}}"><img class="d-block w-100 img-fluid" src="{{p.imagen.url}}" alt="..."/></a>
+                </div>
+                <div class="col-md-6">
+                    <h1>{{p.nombre | title}}</h1>
+                    <p>{{p.descripcion}}</p>
+                    <p>El producto tiene un valor: ${{p.precio | intcomma}}</p>
+                    <label type class="label"><img class="inline-img" src="{% static 'Leaf/img/boxes-stacked-solid.svg'%}" alt="">STOCK: {{p.stock}}</label>
+                    {% if perms.Leaf.change_producto%}
+                        <label type class="label"><img class="inline-img" src="{% static 'Leaf/img/pen-to-square-solid.svg'%}" alt=""><a class="VOLVER" href="/modificar/{{p.id}}">EDITAR</a></label>
+                    {% endif %}
+                    {% if perms.Leaf.delete_producto%}
+                        <label type class="label"><img class="inline-img" src="{% static 'Leaf/img/square-minus-solid.svg'%}" alt=""><a class="VOLVER" onclick="delProducto({{p.id}})" href="#">ELIMINAR</a></label>
+                    {% endif %}
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+    <div>
+        {% include 'Leaf/page.html' %}
+    </div>
+</div>
+{% endblock %}
+

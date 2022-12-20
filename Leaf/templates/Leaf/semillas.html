@@ -1,0 +1,7 @@
+{% extends 'Leaf/base.html'%}
+{% load unicorn %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+{% unicorn 'semillas' user=request.user.pk  productos = productos%}
+{% endblock %}

@@ -1,0 +1,155 @@
+*{
+    font-family: 'JetBrains Mono', monospace;
+    padding: 7px;
+    font-weight: bolder;
+    text-decoration-line: none !important;
+    text-decoration-color: rgb(0, 80, 114);
+    text-decoration-style: none !important;
+}
+.main{
+    background: rgb(223,212,215);
+    background: linear-gradient(52deg, rgba(223,212,215,1) 0%, rgba(210,210,210,1) 93%);
+}
+a{
+  text-decoration-line: none !important;
+  color: black !important;
+  text-decoration-color: rgb(119, 119, 119) !important;
+  text-decoration-style: none !important;
+}
+img{
+  border-radius: 15px;
+}
+#maptext{
+  text-align: center;
+  font-weight: 1000;
+}
+#map{
+  border-radius: 15px;
+  height: 150%;
+}
+#USER{
+  border-radius: 15px;
+  background-color: #ffffff;
+  border-color: #DFD4D7;
+  border-style: hidden;
+  box-shadow: none;
+}
+.dropdown-menu{
+  border-radius: 15px;
+  background-color: #ffffff;
+  border-color: #DFD4D7;
+  border-style: hidden;
+  box-shadow: none;
+}
+
+#descrip{
+  background-color: rgba(255, 255, 255, 0.3);
+  color: black;
+  border-radius: 15px;
+}
+#Title{
+  text-transform: uppercase;
+  font-weight: 1000;
+  text-align: center;
+}
+.log{
+  background-image: url("/static/Leaf/img/sarah.jpg");
+  background-repeat: repeat;  
+  background-attachment: fixed;
+  background-position: 0px -1100px;
+}
+.controls{
+  background-color: rgba(200, 200, 200, 0);
+  color: black;
+  backdrop-filter: blur(20px);
+  border-radius: 15px;
+}
+.INGRESAR, .VOLVER{
+  color: black;
+  text-decoration: none;
+  font-weight: 1000;
+  font-size: large;
+}
+.nav-border{
+  border-radius: 15px;
+}
+.footer, #foot{
+  border-radius: 15px;
+  background-color: rgb(255, 255, 255) !important;
+  color: black;
+}
+#drop{
+  border-radius: 15px !important;
+  border-color: #ffffff !important;
+}
+.footer-laber{
+  font-size: small;
+  font-weight: 1000;
+  text-align: center;
+}
+.control, .clearablefileinput, #id_password1, #id_password2, #id_username{
+    border-radius: 15px;
+    width: 37%;
+    border-style: none;
+  }
+.numberinput, #id_nombre, #id_imagen, #id_categoria, #id_correo, #id_consulta, #id_mensaje{
+    border-radius: 15px !important;
+    width: 80%;
+    border-style: none;
+    text-align: left;
+    line-height: 250% !important;
+    margin: 1%;
+}
+.select{
+  border-radius: 15px !important;
+  width: 77%;
+  border-style: none;
+  text-align: left;
+  line-height: 250% !important;
+  margin: 1%;
+}
+
+#id_descripcion{
+  border-radius: 15px;
+  width: 77%;
+  border-style: none;
+  display: inline-block;
+}
+.label{
+    font-size: large;
+    font-weight: 1000;
+    text-align: center;
+  }
+.login{
+  border-radius: 10px;
+  border-style: none;
+  background-color: rgb(198, 198, 198);
+}
+.inline-img {
+  width: 30px;
+  height: 30px;
+  position: left;
+  border-radius: 0%;
+}
+.inline-imgx{
+  width: 50px;
+  height: 40px;
+  position: left;
+  border-radius: 0%;
+}
+.inline-img-footer{
+  width: 40px;
+  height: 30px;
+  position: left;
+  border-radius: 0%;
+}
+input.larger {
+    width: 15px;
+    height: 15px;
+}
+#border{
+  border-radius: 15px;
+  background-color: black;
+  border-radius: 10px;
+  border-style: none;
+}

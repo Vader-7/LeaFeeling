@@ -1,0 +1,53 @@
+{% extends 'Leaf/base.html'%}
+{% load static %}
+{% block content %}
+<title>LEAFEELING</title>
+<style>
+  /* Always set the map height explicitly to define the size of the div
+   * element that contains the map. */
+  
+  /* Optional: Makes the sample page fill the window. */
+  html, body {
+    height: 80%;
+    margin: 0;
+    padding: 7px;
+  }
+</style>
+  <div class="container" id="descrip">
+    <h1 id="Title">SEGUIMIENTO</h1>
+    <p id="Title">Aqui puedes ver el estado actual de tus pedidos, trabajamos para llevarte lo mejor en el menor tiempo posible.</p> 
+    <div class="progress" style="height: 70px;">
+      <div class="progress-bar bg-success" style="width:20%">
+        <label for="inline-img" class="label"><img class="inline-img" src="{% static 'Leaf/img/building-solid.svg'%}" alt=""> ORIGEN</label>
+      </div>
+      <div class="progress-bar bg-success" style="width:20%">
+        <label for="inline-img" class="label"><img class="inline-img" src="{% static 'Leaf/img/plane-departure-solid.svg'%}" alt=""> TRANSITO</label>
+      </div>
+      <div class="progress-bar bg-success" style="width:20%">
+        <label for="inline-img" class="label"><img class="inline-img" src="{% static 'Leaf/img/truck-fast-solid.svg'%}" alt=""> DESTINO</label>
+      </div>
+      <div class="progress-bar bg-secondary" style="width:20%">
+        <label for="inline-img" class="label"><img class="inline-img" src="{% static 'Leaf/img/dolly-solid.svg'%}" alt=""> DESPACHO</label>
+      </div>
+      <div class="progress-bar bg-secondary" style="width:20%">
+        <label for="inline-img" class="label"><img class="inline-img" src="{% static 'Leaf/img/clipboard-check-solid.svg'%}" alt=""> ENTREGADO</label>
+      </div>
+    </div>
+  </div>
+  <div id="maptext">
+    <h2 id="Title">TU PAQUETE</h2>
+  </div>
+  <div id="map" class="container"></div>
+  <script>
+    var map;
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: -36.795876, lng: -73.06036 },
+        zoom: 16
+      });
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKk8t0lNZhOilSmaDcPX3HQ3NvTJIeRYQ&callback=initMap"
+    async defer></script>
+{% endblock %}
+

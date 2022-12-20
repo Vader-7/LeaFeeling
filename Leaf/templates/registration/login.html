@@ -1,0 +1,28 @@
+{% extends 'registration/base-log.html'%}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content%}
+<title>LOGIN</title>
+<div class="container">
+  <form action="" method="post">
+    <div><br></div>
+    <h1 id="Title">ACCESO</h1>
+    {% csrf_token %}
+    <div><br><br></div>
+      <div class="mb-3">
+        <label for="id_username" class="label"><img class="inline-img" src="{% static 'Leaf/img/user-solid.svg'%}" alt=""> USUARIO</label>
+        <input type="text" name="username" class="control" id="id_username" minlength="2" max="10" required>
+      </div>
+      <div class="mb-3">
+        <label for="id_password" class="label"><img class="inline-img" src="{% static 'Leaf/img/key-solid.svg'%}" alt=""> CONTRASEÑA</label>
+        <input type="password" name="password" class="control" id="id_password" minlength="3" max="10" required>
+      </div>
+      <div></div>
+        <div style="text-align: center;">
+          <button type="submit" class="btn btn-light btn-primary btn-lg btn-block">INGRESAR</button>
+        </div>
+        <label for="crear" class="label"><img class="inline-img" src="{% static 'Leaf/img/circle-plus-solid.svg'%}" alt=""><a class="INGRESAR" href="/registro">CREAR CUENTA</a></label>
+        <label for="crear" class="label"><img class="inline-img" src="{% static 'Leaf/img/house-solid.svg'%}" alt=""><a class="INGRESAR" href="/">HOME</a></label>
+  </form>
+</div> 
+{% endblock %}

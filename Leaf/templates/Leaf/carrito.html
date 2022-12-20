@@ -1,0 +1,8 @@
+{% extends 'Leaf/base.html'%}
+{% load unicorn %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+{% unicorn 'carrito' user=request.user.pk  productos = productos %}
+{% endblock %}
+

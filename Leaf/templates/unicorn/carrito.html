@@ -1,0 +1,60 @@
+{% load static %}
+{% load humanize %}
+<div>
+    <title>LEAFEELING</title>
+    <div class="container" id="descrip">
+        <h3 style="text-align: left;" id="Title"><img class="inline-imgx" src="{% static 'Leaf/img/cart-shopping-solid.svg'%}" alt="">CARRITO</h3>
+        <label for="crear" class="label"><img class="inline-img" src="{% static 'Leaf/img/angle-left-solid.svg'%}" alt=""><a class="VOLVER" href="/">VOLVER</a></label>
+        <div class="row">
+        {% if user_products %}
+            {% for x in user_products %}
+                <div class="col-md-8">
+                    <label type class="label"><img class="inline-img" src="{% static 'Leaf/img/bag-shopping-solid.svg'%}" alt=""><a class="VOLVER" href="">{{x}}</a></label>x <b> {{x.cantidad}}
+                    <label type class="label"><img class="inline-img" src="{% static 'Leaf/img/money-bill-1-wave-solid.svg'%}" alt=""><a class="VOLVER" href="">SUBTOTAL ${{x.precio_total| intcomma}}</a></label>
+                </div>
+                <div class="col-md-4">
+                    <label type class="label"><img class="inline-img" src="{% static 'Leaf/img/cart-plus-solid.svg'%}" alt=""><a unicorn:click="add_producto({{x.producto.pk}})" class="VOLVER" href="">AÑADIR</a></label>
+                    <label type class="label"><img class="inline-img" src="{% static 'Leaf/img/square-minus-solid.svg'%}" alt=""><a unicorn:click="delete_item({{x.pk}})" class="VOLVER" href="">ELIMINAR</a></label>
+                </div>
+            {% endfor %}
+        <div id="border" class="border"></div>
+        <div class="row">
+            <div class="col-md-9">
+                <label type class="label"><img class="inline-img" src="{% static 'Leaf/img/hand-holding-dollar-solid.svg'%}" alt="" href><a href="">TOTAL ${{Total | intcomma}}</a></label>
+                <label type class="label"><img class="inline-img" src="{% static 'Leaf/img/credit-card-solid.svg'%}" alt="" href><a  
+                {% for x in user_products %} 
+                    unicorn:click="compra({{x.producto.pk}})"  
+                {% endfor %}
+                href="">COMPRAR</a></label>
+            </div>
+            <div class="col-md-3">
+                <label type class="label"><img class="inline-img" src="{% static 'Leaf/img/trash-can-solid.svg'%}" alt=""><a {% for x in user_products %} 
+                    unicorn:click="delete_carrito({{x.pk}})"  
+                {% endfor %} 
+                class="VOLVER" href="">VACIAR CARRO</a></label>
+            </div>
+        </div>
+        {% else %}
+            <label type class="label"><img class="inline-img" src="{% static 'Leaf/img/box-open-solid.svg'%}" alt=""><a unicorn:click="delete_carrito" class="VOLVER" href=""><h5 id="Title">No tiene productos en el carrito.</h5></a></label>
+            
+        {% endif %}
+        {% for p in Productos %}
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="d-block w-30 img-fluid" src="{{p.imagen.url}}" alt="..."/>
+                </div>
+                <div class="col-md-6">
+                    <h1>{{p.nombre | title}}</h1>
+                    <p>{{p.descripcion}}</p>
+                    <p>El producto tiene un valor: ${{p.precio | intcomma}}</p>
+                    <br>
+                    <label type class="label"><img class="inline-img" src="{% static 'Leaf/img/boxes-stacked-solid.svg'%}" alt="">STOCK: {{p.stock}}</label>
+                    <label type class="label"><img class="inline-img" src="{% static 'Leaf/img/cart-plus-solid.svg'%}" alt=""><a unicorn:click="add_producto({{p.pk}})" class="VOLVER" href="">CARRITO</a></label>
+                </div>
+        {% endfor %}
+        </div> 
+    </div>
+    <div>
+        {% include 'Leaf/page.html' %}
+    </div>
+</div>

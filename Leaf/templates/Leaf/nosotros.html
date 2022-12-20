@@ -1,0 +1,46 @@
+{% extends 'Leaf/base.html'%}
+{% load static %}
+{% block content %}
+<title>LEAFEELING</title>
+<style>
+  /* Always set the map height explicitly to define the size of the div
+   * element that contains the map. */
+  
+  /* Optional: Makes the sample page fill the window. */
+  html, body {
+    height: 80%;
+    padding: 7px;
+  }
+</style>
+  <div class="container" id="descrip">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="{% static 'Leaf/img/LaFeeling.jpeg'%}" alt="" class="img-fluid">
+      </div>
+      <div class="col-md-6">
+        <h1 class="text-wrap">QUIENES SOMOS</h1>
+        <p class="text-wrap">Somos una asociación de vecinos que nos juntamos a realizar
+          una venta de productos de jardinería como maceteros ,tierra de hojas,
+          flores y arbustos. Todo esto lo hacemos para ayudar una fundación
+          sin fines de lucro.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div id="maptext">
+    <h2>Nuestra Ubicación</h2>
+    <p>DuocUC: Sede San Andrés De Concepción</p>
+  </div>
+    <div id="map" class="container"></div>
+  <script>
+    var map;
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: -36.795876, lng: -73.06036 },
+        zoom: 16
+      });
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKk8t0lNZhOilSmaDcPX3HQ3NvTJIeRYQ&callback=initMap"
+    async defer></script>
+{% endblock %}

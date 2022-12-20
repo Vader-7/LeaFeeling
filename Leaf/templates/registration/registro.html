@@ -1,0 +1,19 @@
+{% extends 'registration/base-log.html'%}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content%}
+<title>REGISTRO</title>
+<h1 id="Title">REGISTRO</h1>
+<div class="container">
+  <form action="" method="post">
+    <div><br></div>
+    {% csrf_token %}
+    {{form | crispy}}
+    <div style="text-align: center;">
+      <button type="submit" class="btn btn-light btn-primary btn-lg btn-block">REGISTRAR</button>
+    </div>
+    <label for="crear" class="label"><img class="inline-img" src="{% static 'Leaf/img/angle-left-solid.svg'%}" alt=""><a class="VOLVER" href="{% url 'login' %}">VOLVER</a></label>
+  </form>  
+</div>        
+{% endblock %}
+    
