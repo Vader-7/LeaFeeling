@@ -18,6 +18,9 @@ a{
 }
 img{
   border-radius: 15px;
+  /*make the image responsive*/
+  max-width: 100%;
+  height: auto;
 }
 #maptext{
   text-align: center;
@@ -46,6 +49,13 @@ img{
   background-color: rgba(255, 255, 255, 0.3);
   color: black;
   border-radius: 15px;
+  /*eliminate the white space between the image and the border*/
+  background-clip: padding-box !important;
+  /*eliminate the space between the image and the border*/
+  border: 1px solid transparent;
+  /*eliminate the white space between the image and the border*/
+  border-image: none;
+  
 }
 #Title{
   text-transform: uppercase;
