@@ -68,6 +68,15 @@ img{
   background-attachment: fixed;
   background-position: 0px -1100px;
 }
+.container-fluid{
+  /*eliminate the white space between the image and the border*/
+  background-clip: padding-box !important;
+  /*eliminate the space between the image and the border*/
+  border: 1px solid transparent;
+  /*eliminate the white space between the image and the border*/
+  border-image: none;
+  
+}
 .controls{
   background-color: rgba(200, 200, 200, 0);
   color: black;
